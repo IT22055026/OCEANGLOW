@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<queries>
+	
+	<query id="create_admin_table">
+		
+		<![CDATA[
+			CREATE TABLE admin_demo(
+				roomID varchar(10) NOT NULL,
+				roomType varchar(20),
+				numOfRooms varchar(10),
+				price varchar(20),
+				numbOfGuest varchar(20),
+				PRIMARY KEY (roomID)
+			);
+		]]>
+		
+	</query>
+	
+	<query id="insert_admin">
+    <![CDATA[
+        INSERT INTO admin_demo (roomID, roomType, numOfRooms, price, numbOfGuest)
+        VALUES(?,?,?,?,?);
+    ]]>    
+	</query>
+
+	
+	<query id = "get_admin_ids">
+	
+		<![CDATA[
+			SELECT roomID FROM admin_demo;
+		]]>
+	
+	</query>
+	
+	<query id="get_admin_all_Admins">
+    <![CDATA[
+       SELECT * FROM admin_demo;
+    ]]>    
+	</query>
+	
+	<query id="get_admin_by_id">
+    <![CDATA[
+       SELECT * FROM admin_demo WHERE roomID = "";
+    ]]>    
+	</query>
+	
+	<query id="update_admin">
+    <![CDATA[
+       UPDATE admin 
+       SET roomType =?, numOfRooms=?, price=?, numbOfGuest=?
+       WHERE roomID = ?
+    ]]>    
+	</query>
+	
+	<query id="delete_admin">
+    <![CDATA[
+       DELETE FROM admin WHERE roomID = ?
+    ]]>    
+	</query>
+	
+</queries>
